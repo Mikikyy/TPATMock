@@ -34,7 +34,7 @@ details{border-top:1px solid var(--bd);padding:8px 0}summary{cursor:pointer;font
 <script>
 const L=['ก','ข','ค','ง'];
 const P={
-iq:{n:'เชาว์ปัญญา',e:'🧠',s:80,t:['ข้อที่ใช้เวลาเกิน ~1.5 เท่าของเวลาเฉลี่ย ให้ปักธงแล้วข้าม กลับมาทำทีหลัง','อนุกรม: ลองผลต่าง → ผลต่างซ้อน → อัตราส่วน → แยกเป็นสองชุดสลับ → ยกกำลัง/จำนวนเฉพาะ','อุปมา: ตั้งประโยคความสัมพันธ์ก่อน (A คือ ___ ของ B) แล้วค่อยไล่ตัวเลือก','ตรรกศาสตร์: เขียนเป็น "ถ้า P แล้ว Q" ใช้ contrapositive (ถ้าไม่ Q แล้วไม่ P) และอย่ากลับทิศของเงื่อนไข','โจทย์คำนวณ: ประมาณค่าคร่าว ๆ เพื่อตัดตัวเลือกก่อนคิดละเอียด','อย่าเว้นว่าง ถ้าไม่มีการหักคะแนนข้อผิด (เช็กกติกาล่าสุดจาก กสพท.)']},
+iq:{n:'เชาว์ปัญญา',e:'🧠',s:80,t:['ข้อที่ใช้เวลาเกิน ~1.5 เท่าของเวลาเฉลี่ย ให้ปักธงแล้วข้าม กลับมาทำทีหลัง','อนุกรม: ลองผลต่าง → ผลต่างซ้อน → อัตราส่วน → แยกเป็นสองชุดสลับ → ยกกำลัง/จำนวนเฉพาะ','อุปมา: ตั้งประโยคความสัมพันธ์ก่อน (A คือ ___ ของ B) แล้วค่อยไล่ตัวเลือก','ตรรกศาสตร์: เขียนเป็น "ถ้า P แล้ว Q" ใช้ contrapositive (ถ้าไม่ Q แล้วไม่ P) และอย่ากลับทิศของเงื่อนไข','โจทย์คำนวณ: ประมาณค่าคร่าว ๆ เพื่อตัดตัวเลือกก่อนคิดรายละเอียด','อย่าเว้นว่าง ถ้าไม่มีการหักคะแนนข้อผิด (เช็กกติกาล่าสุดจาก กสพท.)']},
 eth:{n:'จริยธรรมทางการแพทย์',e:'⚕️',s:50,t:['อ่านประโยคคำถามท้ายก่อน: "ควรทำอะไรก่อน" / "เหมาะสมที่สุด" / "ไม่เหมาะสม" ตอบสลับทิศบ่อยที่สุด','ลำดับคิดเร็ว: ความปลอดภัยผู้ป่วย → สิทธิผู้ป่วย (ยินยอม, ความลับ, ตัดสินใจเอง) → ซื่อสัตย์/โปร่งใส → กฎหมายและระเบียบ → ปรึกษา/ส่งต่อผู้ที่เหมาะสม','ตัวเลือกสุดโต่งมักผิด: ปิดบังข้อมูล, ตัดสินใจแทนผู้ป่วยโดยไม่ถาม, ทำเกินขอบเขตความสามารถ, เปิดเผยความลับโดยไม่จำเป็น, ใช้อารมณ์ตอบโต้','ตัวเลือกที่มักถูก: รับฟัง → อธิบายข้อมูลครบ → ให้ผู้ป่วยตัดสินใจ → ปรึกษาทีม/ผู้ที่เกี่ยวข้อง','ตัด 2 ตัวเลือกสุดโต่งใน ~10 วินาที แล้วเทียบ 2 ตัวที่เหลือ จะทำเร็วและไม่เสียคะแนน','ข้อยกเว้นที่ต้องจำ: ฉุกเฉินที่ผู้ป่วยตัดสินใจเองไม่ได้ และความลับที่ต้องเปิดเผยเพื่อป้องกันอันตรายร้ายแรงต่อผู้อื่น','นี่คือแนวทางประมาณการ ไม่ใช่กฎตายตัว ให้ดูบริบทโจทย์ทุกครั้ง']},
 lnk:{n:'เชื่อมโยง',e:'🔗',s:90,t:['อ่านคำถามและตัวเลือกก่อน แล้วค่อยกวาดบทความหาคำสำคัญ ช่วยลดเวลาอ่านซ้ำ','แยก "สิ่งที่ข้อมูลบอก" ออกจาก "ข้อสรุปที่เกินข้อมูล" คำเด็ดขาดอย่าง เสมอ/ทุก/เท่านั้น มักเป็นตัวลวง','ความสัมพันธ์ ≠ เหตุและผล ถ้าบทความไม่ได้ระบุกลไก','ข้อมูลตัวเลข: ดูหน่วย ฐานเปรียบเทียบ และแนวโน้มก่อนตอบ','เชื่อมสองเรื่อง: หา "ตัวกลางร่วม" (แนวคิด/ตัวแปร) ที่โยงทั้งสองเข้าด้วยกัน']}
 };
@@ -45,4 +45,88 @@ const CFG={ADMIN:'mickey.chawanvit@gmail.com',GEN:'https://claude.ai/artifact/5H
 let user=null,AUTH_ON=false,auth=null,db=null,cloud=[],onSetup=false;
 const isAdmin=()=>!!(user && (user.email||'').toLowerCase()===CFG.ADMIN.toLowerCase());
 async function login(){const pr=new firebase.auth.GoogleAuthProvider();try{await auth.signInWithPopup(pr)}catch(e){if(e.code==='auth/popup-blocked')auth.signInWithRedirect(pr);else if(e.code!=='auth/popup-closed-by-user'&&e.code!=='auth/cancelled-popup-request'){note='ล็อกอินไม่สำเร็จ ลองใหม่อีกครั้ง';setup()}}}
-function initAuth(){return new Promise(res=>{try{if(typeof firebase==='undefined'||CFG.fb.apiKey.startsWith('YOUR_'))return res();firebase.initializeApp(CFG.fb);auth=firebase.auth();db=firebase.firestore();AUTH_ON=true;let first=true;auth
+function initAuth(){return new Promise(res=>{try{if(typeof firebase==='undefined'||CFG.fb.apiKey.startsWith('YOUR_'))return res();firebase.initializeApp(CFG.fb);auth=firebase.auth();db=firebase.firestore();AUTH_ON=true;let first=true;auth.onAuthStateChanged(u=>{user=u;if(first){first=false;res()}else{(user?loadCloud():Promise.resolve()).then(()=>{if(onSetup)setup()})}})}catch(e){AUTH_ON=false;res()}})}
+async function loadCloud(){if(!db)return;try{const sn=await db.collection('banks').get();cloud=[];sn.forEach(d=>{const v=d.data();cloud.push({id:d.id,n:(v.items||[]).length,at:v.at||0});add(v.items)})}catch(e){note=(note?note+' · ':'')+'โหลดคลังกลางไม่สำเร็จ'}}
+function parseBank(t){t=t.trim();const a=t.indexOf('['),b=t.lastIndexOf(']');if(a<0||b<a)return null;let r;try{r=JSON.parse(t.slice(a,b+1))}catch(e){return null}
+ return r.filter(x=>x&&P[x.k]&&x.q&&Array.isArray(x.c)&&x.c.length===4&&Number.isInteger(x.a)&&x.a>=0&&x.a<4&&!BANK.some(y=>y.q===x.q)).map(x=>({k:x.k,ch:x.ch||'ทั่วไป',q:String(x.q),c:x.c.map(String),a:x.a,e:String(x.e||'')}))}
+function adminUp(){return `<div style="margin-top:14px;border-top:1px solid var(--bd);padding-top:10px"><b>อัปโหลดโจทย์ขึ้นคลังกลาง</b><div class="mu">ไฟล์ JSON จาก AI ตัวไหนก็ได้ (รูปแบบเดียวกับตัวสร้างคลัง) ทุกคนที่เปิดเว็บจะเห็นโจทย์ใหม่ทันที ไม่ต้องอัปไฟล์ขึ้น GitHub</div>
+<input type="file" id="af" accept=".json,application/json" multiple style="margin:8px 0"><textarea id="at" placeholder="หรือวาง JSON ตรงนี้" style="width:100%;height:80px;font:inherit;background:var(--bg);color:var(--tx);border:1px solid var(--bd);border-radius:8px"></textarea>
+<div class="row" style="margin-top:6px"><button class="btn" id="au">อัปโหลด</button><span class="mu" id="am"></span></div>
+<div class="mu" style="margin-top:8px">ชุดที่อัปโหลดไว้ ${cloud.length} ชุด (รวม ${cloud.reduce((a,c)=>a+c.n,0)} ข้อ)</div>${cloud.map(c=>`<div class="row mu"><span>${c.n} ข้อ · ${c.at?new Date(c.at).toLocaleString('th-TH'):'-'}</span><button class="chip" data-cd="${c.id}">ลบชุดนี้</button></div>`).join('')}</div>`}
+async function upAdmin(){const m=$('am'),texts=[];for(const f of$('af').files)texts.push(await f.text());if($('at').value.trim())texts.push($('at').value);
+ let items=[];texts.forEach(t=>{const r=parseBank(t);if(r)items.push(...r)});const seen=new Set();items=items.filter(x=>!seen.has(x.q)&&seen.add(x.q));
+ if(!items.length){m.textContent='ไม่พบโจทย์ที่ใช้ได้ (รูปแบบผิด หรือซ้ำกับคลังเดิม)';return}
+ m.textContent='กำลังอัปโหลด…';try{for(let i=0;i<items.length;i+=150)await db.collection('banks').add({items:items.slice(i,i+150),at:Date.now()});
+ note=`อัปโหลดแล้ว ${items.length} ข้อ`;await loadCloud();setup()}catch(e){m.textContent='อัปโหลดไม่สำเร็จ (ตรวจกฎ Firestore และอีเมลแอดมิน)'}}
+function hdr(){if(!AUTH_ON)return '';
+ if(!user)return `<div class="card row" style="justify-content:space-between"><span class="mu">เข้าสู่ระบบด้วย Google${CFG.REQUIRE_LOGIN?'':' (ไม่บังคับ)'}</span><button class="btn g" id="li">ล็อกอิน</button></div>`;
+ return `<div class="card row" style="justify-content:space-between"><span class="mu">👤 ${esc(user.displayName||user.email)}${isAdmin()?' · แอดมิน':''}</span><button class="btn g" id="lo">ออกจากระบบ</button></div>`+(isAdmin()?`<div class="card"><h2>🛠️ หน้าแอดมิน</h2><div class="mu">สร้างโจทย์ด้วย AI แล้วดาวน์โหลดคลัง JSON มาใส่เว็บนี้ (ต้องล็อกอิน claude.ai ด้วยบัญชีเจ้าของ)</div><div class="row" style="margin-top:8px"><a class="btn" style="text-decoration:none" href="${CFG.GEN}" target="_blank" rel="noopener">เปิดตัวสร้างข้อสอบอัตโนมัติ</a></div>${adminUp()}</div>`:'')}
+let BANK=/*BANK*/[]/*END*/;
+const sel={};K.forEach(k=>sel[k]={on:true,ch:null,n:10,s:P[k].s});
+const $=id=>document.getElementById(id),app=$('app');
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+let qs=[],ans=[],flag=new Set(),cur=0,left=0,total=0,timer=null,armed=false,note='';
+
+const shuf=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
+function add(j){if(!Array.isArray(j))return 0;let n=0;j.forEach(x=>{if(x&&P[x.k]&&x.q&&Array.isArray(x.c)&&x.c.length===4&&Number.isInteger(x.a)&&x.a>=0&&x.a<4&&!BANK.some(b=>b.q===x.q)){BANK.push({k:x.k,ch:x.ch||'ทั่วไป',q:String(x.q),c:x.c.map(String),a:x.a,e:String(x.e||'')});n++}});return n}
+const chs=k=>[...new Set(BANK.filter(b=>b.k===k).map(b=>b.ch))];
+const cnt=(k,set)=>BANK.filter(b=>b.k===k&&set.has(b.ch)).length;
+function norm(){K.forEach(k=>{const v=sel[k],all=chs(k);if(!v.ch)v.ch=new Set(all);else all.forEach(c=>{if(!v.seen||!v.seen.has(c))v.ch.add(c)});v.seen=new Set(all);v.n=Math.min(v.n,Math.max(1,cnt(k,v.ch)))})}
+function tot(){let n=0,t=0;K.forEach(k=>{const v=sel[k],m=Math.min(v.n,cnt(k,v.ch));if(v.on&&m){n+=m;t+=m*v.s}});return{n,t}}
+const mm=t=>{t=Math.max(0,t);return String(Math.floor(t/60)).padStart(2,'0')+':'+String(t%60).padStart(2,'0')};
+const tipsHTML=ks=>ks.map(k=>`<details><summary>${P[k].e} เทคนิค — ${P[k].n}</summary><ul>${P[k].t.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></details>`).join('');
+function upd(){const T=tot();$('sum').textContent=`รวม ${T.n} ข้อ · เวลา ${Math.ceil(T.t/60)} นาที`;$('go').disabled=!T.n;K.forEach(k=>{const v=sel[k],e=$('pt-'+k);if(e)e.textContent=`≈ ${Math.ceil(Math.min(v.n,cnt(k,v.ch))*v.s/60)} นาที`})}
+
+function setup(){clearInterval(timer);norm();onSetup=true;
+ if(CFG.REQUIRE_LOGIN&&AUTH_ON&&!user){app.innerHTML=`<h1>🩺 จำลองข้อสอบ TPAT1</h1><div class="card">กรุณาเข้าสู่ระบบก่อนใช้งาน<br><br><button class="btn" id="li">ล็อกอินด้วย Google</button></div>`;$('li').onclick=login;return}
+ app.innerHTML=`<h1>🩺 จำลองข้อสอบ TPAT1</h1><div class="mu">เลือกพาร์ท บท และจำนวนข้อ เวลาคำนวณตามสัดส่วนข้อสอบจริง</div>${hdr()}${note?`<div class="card">${note}</div>`:''}`+
+ K.map(k=>{const p=P[k],v=sel[k],all=chs(k),have=BANK.filter(b=>b.k===k).length;if(!have)return `<div class="card" style="opacity:.55"><h2 style="margin:0">${p.e} ${p.n}</h2><div class="mu">ยังไม่มีโจทย์ในคลัง</div></div>`;
+ return `<div class="card"><div class="row" style="justify-content:space-between"><label class="row"><input type="checkbox" data-on="${k}" ${v.on?'checked':''}><h2 style="margin:0">${p.e} ${p.n}</h2></label><span class="mu" id="pt-${k}"></span></div>`+
+ (v.on?`<div class="row" style="margin:10px 0">${all.map((c,i)=>`<button class="chip ${v.ch.has(c)?'on':''}" data-ch="${k}\vert{}${i}">${esc(c)} (${BANK.filter(b=>b.k===k&&b.ch===c).length})</button>`).join('')}</div>
+ <div class="row mu"><span>จำนวนข้อ</span><input type="number" min="1" max="${cnt(k,v.ch)||1}" value="${v.n}" data-n="${k}"><span>(มี ${cnt(k,v.ch)})</span><span>เวลาเฉลี่ย</span><input type="number" min="20" max="240" value="${v.s}" data-s="${k}"><span>วิ/ข้อ</span></div>`:'')+`</div>`}).join('')+
+ `<div class="card"><h2>📘 วิธีทำให้ได้คะแนนและเร็ว</h2>${tipsHTML(K)}</div>
+ <div class="mu" style="margin:8px 2px">คลังข้อสอบปัจจุบัน ${BANK.length} ข้อ</div>
+ <div class="mu" style="margin:8px 2px">โจทย์สร้างโดย AI อาจมีผิดพลาด ถ้าเฉลยดูแปลกให้ตรวจซ้ำกับครูหรือเฉลยทางการ · เวลา/ข้อ เป็นค่าประมาณ ปรับเองได้</div>
+ <div class="foot"><div class="row" style="justify-content:space-between"><b id="sum"></b><button class="btn" id="go">เริ่มทำข้อสอบ</button></div></div>`;
+ upd();$('go').onclick=start;if($('li'))$('li').onclick=login;if($('lo'))$('lo').onclick=()=>auth.signOut().then(()=>location.reload());if($('au'))$('au').onclick=upAdmin;
+}
+
+app.addEventListener('click',async e=>{const d=e.target.closest('[data-cd]');if(d){if(!d.dataset.a){d.dataset.a=1;d.textContent='กดอีกครั้งเพื่อลบ';return}try{await db.collection('banks').doc(d.dataset.cd).delete();location.reload()}catch(x){d.textContent='ลบไม่สำเร็จ'}return}
+const c=e.target.closest('[data-ch]');if(!c)return;const[k,i]=c.dataset.ch.split('|'),n=chs(k)[i],s=sel[k].ch;s.has(n)?s.delete(n):s.add(n);setup()});
+app.addEventListener('change',e=>{const t=e.target;if(t.dataset.on){sel[t.dataset.on].on=t.checked;setup()}});
+app.addEventListener('input',e=>{const t=e.target;if(t.dataset.n){sel[t.dataset.n].n=Math.max(1,+t.value||1);upd()}if(t.dataset.s){sel[t.dataset.s].s=Math.min(240,Math.max(20,+t.value||20));upd()}});
+
+function pick(k){const v=sel[k],g={};BANK.filter(b=>b.k===k&&v.ch.has(b.ch)).forEach(b=>(g[b.ch]=g[b.ch]||[]).push(b));
+ const ls=shuf(Object.keys(g)).map(c=>shuf(g[c])),out=[];while(out.length<v.n&&ls.some(l=>l.length))ls.forEach(l=>{if(l.length&&out.length<v.n)out.push(l.pop())});return out}
+function start(){onSetup=false;qs=[];K.forEach(k=>{if(!sel[k].on||!sel[k].ch.size)return;pick(k).forEach(b=>{const o=shuf([0,1,2,3]);qs.push({k,ch:b.ch,q:b.q,c:o.map(i=>b.c[i]),a:o.indexOf(b.a),e:b.e})})});
+ if(!qs.length)return;ans=qs.map(()=>-1);flag=new Set();cur=0;armed=false;
+ total=left=K.reduce((a,k)=>a+qs.filter(q=>q.k===k).length*sel[k].s,0);
+ clearInterval(timer);timer=setInterval(()=>{left--;const e=$('tm');if(e){e.textContent=mm(left);e.classList.toggle('lo',left<total*.1)}if(left<=0){clearInterval(timer);finish()}},1000);exam()}
+
+function exam(){const q=qs[cur],p=P[q.k];
+ app.innerHTML=`<div class="bar"><div><span class="tag">${p.e} ${p.n}</span><div class="mu">ข้อ ${cur+1}/${qs.length} · เฉลี่ย ${sel[q.k].s} วิ/ข้อ</div></div><div class="tm ${left<total*.1?'lo':''}" id="tm">${mm(left)}</div></div>
+ <div class="card"><div class="mu">${esc(q.ch)}</div><div class="q">${esc(q.q)}</div>
+ ${q.c.map((c,i)=>`<button class="opt ${ans[cur]===i?'sel':''}" data-o="${i}"><b>${L[i]}.</b>${esc(c)}</button>`).join('')}
+ <div class="row" style="margin-top:10px"><button class="btn g" id="pv" ${cur?'':'disabled'}>← ก่อนหน้า</button><button class="btn g" id="fl">${flag.has(cur)?'🚩 ยกเลิกธง':'🏳️ ปักธง'}</button><button class="btn g" id="nx" ${cur<qs.length-1?'':'disabled'}>ถัดไป →</button></div></div>
+ <div class="card"><div class="grid">${qs.map((_,i)=>`<button class="gn ${ans[i]>=0?'d':''} ${flag.has(i)?'f':''}${i===cur?'c':''}" data-g="${i}">${i+1}</button>`).join('')}</div>
+ <div class="mu" style="margin-top:8px">ตอบแล้ว ${ans.filter(a=>a>=0).length}/${qs.length} · ธง ${flag.size}</div></div>
+ <div class="foot"><div class="row" style="justify-content:flex-end"><button class="btn" id="sb">${armed?'กดอีกครั้งเพื่อยืนยันส่งข้อสอบ':'ส่งข้อสอบ'}</button></div></div>`;
+ app.querySelectorAll('[data-o]').forEach(b=>b.onclick=()=>{ans[cur]=+b.dataset.o;armed=false;exam()});
+ app.querySelectorAll('[data-g]').forEach(b=>b.onclick=()=>{cur=+b.dataset.g;exam();scrollTo(0,0)});
+ $('pv').onclick=()=>{cur--;exam();scrollTo(0,0)};$('nx').onclick=()=>{cur++;exam();scrollTo(0,0)};
+ $('fl').onclick=()=>{flag.has(cur)?flag.delete(cur):flag.add(cur);exam()};$('sb').onclick=()=>{if(!armed){armed=true;exam()}else finish()}}
+
+function finish(){clearInterval(timer);const used=total-Math.max(0,left);let ok=0;const by={};
+ qs.forEach((q,i)=>{by[q.k]=by[q.k]||{n:0,c:0,u:0};by[q.k].n++;if(ans[i]===q.a){ok++;by[q.k].c++}if(ans[i]<0)by[q.k].u++});
+ const pc=Math.round(ok/qs.length*100);
+ app.innerHTML=`<h1>ผลสอบ</h1><div class="card"><div class="big">${ok}/${qs.length} <span style="font-size:20px">(${pc}%)</span></div><div class="mu">ใช้เวลา ${mm(used)} จาก ${mm(total)}</div></div>
+ <div class="card"><h2>แยกตามพาร์ท</h2>${Object.keys(by).map(k=>`<div class="row" style="justify-content:space-between;margin:6px 0"><span>${P[k].e}${P[k].n}</span><b>${by[k].c}/${by[k].n} <span class="mu">(ไม่ได้ตอบ ${by[k].u})</span></b></div>`).join('')}</div>
+ <div class="card"><h2>เทคนิคสำหรับพาร์ทที่สอบ</h2>${tipsHTML(Object.keys(by))}</div>
+ <div class="row"><button class="chip on" id="all">ดูทุกข้อ</button><button class="chip" id="wr">เฉพาะข้อที่ผิด/ไม่ได้ตอบ</button></div><div id="rv"></div>
+ <div class="foot"><div class="row" style="justify-content:flex-end"><button class="btn" id="re">ทำชุดใหม่</button></div></div>`;
+ const show=w=>{$('all').classList.toggle('on',!w);$('wr').classList.toggle('on',w);$('rv').innerHTML=qs.map((q,i)=>({q,i})).filter(x=>!w||ans[x.i]!==x.q.a).map(({q,i})=>`<div class="card"><span class="tag">${P[q.k].e} ${P[q.k].n}</span> <span class="mu">ข้อ ${i+1} · ${esc(q.ch)}</span><div class="q">${esc(q.q)}</div>${q.c.map((c,j)=>`<div class="opt ${j===q.a?'ok':j===ans[i]?'no':''}"><b>${L[j]}.</b> ${esc(c)}${j===ans[i]?' (คำตอบของคุณ)':''}</div>`).join('')}<div class="mu">💡 ${esc(q.e)}</div></div>`).join('')||'<div class="card">ถูกหมดเลย 🎉</div>'};
+ $('all').onclick=()=>show(false);$('wr').onclick=()=>show(true);$('re').onclick=setup;show(false);scrollTo(0,0)}
+
+(async()=>{try{const r=await fetch('tpat1-bank.json',{cache:'no-store'});if(r.ok){const n=add(await r.json());if(n)note=`โหลดคลังข้อสอบ ${n} ข้อแล้ว`}}catch(e){}
+ await initAuth();if(!(CFG.REQUIRE_LOGIN&&AUTH_ON&&!user))await loadCloud();if(!BANK.length)note='ยังไม่มีโจทย์ในคลัง รอผู้ดูแลอัปโหลดโจทย์ หรือเลือกไฟล์ JSON ที่ด้านล่างของหน้า';setup()})();
+</script></body></html>
