@@ -34,16 +34,16 @@ details{border-top:1px solid var(--bd);padding:8px 0}summary{cursor:pointer;font
 <script>
 const L=['ก','ข','ค','ง'];
 const P={
-iq:{n:'เชาว์ปัญญา',e:'🧠',s:80,t:['ข้อที่ใช้เวลาเกิน ~1.5 เท่าของเวลาเฉลี่ย ให้ปักธงแล้วข้าม กลับมาทำทีหลัง','อนุกรม: ลองผลต่าง → ผลต่างซ้อน → อัตราส่วน → แยกเป็นสองชุดสลับ → ยกกำลัง/จำนวนเฉพาะ','อุปมา: ตั้งประโยคความสัมพันธ์ก่อน (A คือ ___ ของ B) แล้วค่อยไล่ตัวเลือก','ตรรกศาสตร์: เขียนเป็น "ถ้า P แล้ว Q" ใช้ contrapositive (ถ้าไม่ Q แล้วไม่ P) และอย่ากลับทิศของเงื่อนไข','โจทย์คำนวณ: ประมาณค่าคร่าว ๆ เพื่อตัดตัวเลือกก่อนคิดรายละเอียด','อย่าเว้นว่าง ถ้าไม่มีการหักคะแนนข้อผิด (เช็กกติกาล่าสุดจาก กสพท.)']},
+iq:{n:'เชาว์ปัญญา',e:'🧠',s:80,t:['ข้อที่ใช้เวลาเกิน ~1.5 เท่าของเวลาเฉลี่ย ให้ปักธงแล้วข้าม กลับมาทำทีหลัง','อนุกรม: ลองผลต่าง → ผลต่างซ้อน → อัตราส่วน → แยกเป็นสองชุดสลับ → ยกกำลัง/จำนวนเฉพาะ','อุปมา: ตั้งประโยคความสัมพันธ์ก่อน (A คือ ___ ของ B) แล้วค่อยไล่ตัวเลือก','ตรรกศาสตร์: เขียนเป็น "ถ้า P แล้ว Q" ใช้ contrapositive (ถ้าไม่ Q แล้วไม่ P) และอย่ากลับทิศของเงื่อนไข','โจทย์คำนวณ: ประมาณค่าคร่าว ๆ เพื่อตัดตัวเลือกก่อนคิดละเอียด','อย่าเว้นว่าง ถ้าไม่มีการหักคะแนนข้อผิด (เช็กกติกาล่าสุดจาก กสพท.)']},
 eth:{n:'จริยธรรมทางการแพทย์',e:'⚕️',s:50,t:['อ่านประโยคคำถามท้ายก่อน: "ควรทำอะไรก่อน" / "เหมาะสมที่สุด" / "ไม่เหมาะสม" ตอบสลับทิศบ่อยที่สุด','ลำดับคิดเร็ว: ความปลอดภัยผู้ป่วย → สิทธิผู้ป่วย (ยินยอม, ความลับ, ตัดสินใจเอง) → ซื่อสัตย์/โปร่งใส → กฎหมายและระเบียบ → ปรึกษา/ส่งต่อผู้ที่เหมาะสม','ตัวเลือกสุดโต่งมักผิด: ปิดบังข้อมูล, ตัดสินใจแทนผู้ป่วยโดยไม่ถาม, ทำเกินขอบเขตความสามารถ, เปิดเผยความลับโดยไม่จำเป็น, ใช้อารมณ์ตอบโต้','ตัวเลือกที่มักถูก: รับฟัง → อธิบายข้อมูลครบ → ให้ผู้ป่วยตัดสินใจ → ปรึกษาทีม/ผู้ที่เกี่ยวข้อง','ตัด 2 ตัวเลือกสุดโต่งใน ~10 วินาที แล้วเทียบ 2 ตัวที่เหลือ จะทำเร็วและไม่เสียคะแนน','ข้อยกเว้นที่ต้องจำ: ฉุกเฉินที่ผู้ป่วยตัดสินใจเองไม่ได้ และความลับที่ต้องเปิดเผยเพื่อป้องกันอันตรายร้ายแรงต่อผู้อื่น','นี่คือแนวทางประมาณการ ไม่ใช่กฎตายตัว ให้ดูบริบทโจทย์ทุกครั้ง']},
 lnk:{n:'เชื่อมโยง',e:'🔗',s:90,t:['อ่านคำถามและตัวเลือกก่อน แล้วค่อยกวาดบทความหาคำสำคัญ ช่วยลดเวลาอ่านซ้ำ','แยก "สิ่งที่ข้อมูลบอก" ออกจาก "ข้อสรุปที่เกินข้อมูล" คำเด็ดขาดอย่าง เสมอ/ทุก/เท่านั้น มักเป็นตัวลวง','ความสัมพันธ์ ≠ เหตุและผล ถ้าบทความไม่ได้ระบุกลไก','ข้อมูลตัวเลข: ดูหน่วย ฐานเปรียบเทียบ และแนวโน้มก่อนตอบ','เชื่อมสองเรื่อง: หา "ตัวกลางร่วม" (แนวคิด/ตัวแปร) ที่โยงทั้งสองเข้าด้วยกัน']}
 };
 const K=Object.keys(P);
-// ===== ตั้งค่า: แก้ไขอีเมล ADMIN และปรับปรุงการเช็กสิทธิ์ =====
-const CFG={ADMIN:'mickey.chawanvit@gmail.com',GEN:'https://claude.ai/artifact/5HHjDRAb3YYZcSr4PQxmjB',REQUIRE_LOGIN:true,
+// ===== ตั้งค่า: วางค่า firebaseConfig ของคุณในช่อง fb =====
+const CFG={ADMIN:'chawanvit.luangkittikong@gmail.com',GEN:'https://claude.ai/artifact/5HHjDRAb3YYZcSr4PQxmjB',REQUIRE_LOGIN:true,
  fb:{apiKey:'AIzaSyCy5u9SMt5U7F9nqWAqLhraXD_GkVFrMOY',authDomain:'tpat1mock.firebaseapp.com',projectId:'tpat1mock',appId:'1:374427840291:web:a1994fb44c237abc73e696'}};
 let user=null,AUTH_ON=false,auth=null,db=null,cloud=[],onSetup=false;
-const isAdmin=()=>!!(user && (user.email||'').toLowerCase()===CFG.ADMIN.toLowerCase());
+const isAdmin=()=>!!(user&&user.emailVerified&&(user.email||'').toLowerCase()===CFG.ADMIN);
 async function login(){const pr=new firebase.auth.GoogleAuthProvider();try{await auth.signInWithPopup(pr)}catch(e){if(e.code==='auth/popup-blocked')auth.signInWithRedirect(pr);else if(e.code!=='auth/popup-closed-by-user'&&e.code!=='auth/cancelled-popup-request'){note='ล็อกอินไม่สำเร็จ ลองใหม่อีกครั้ง';setup()}}}
 function initAuth(){return new Promise(res=>{try{if(typeof firebase==='undefined'||CFG.fb.apiKey.startsWith('YOUR_'))return res();firebase.initializeApp(CFG.fb);auth=firebase.auth();db=firebase.firestore();AUTH_ON=true;let first=true;auth.onAuthStateChanged(u=>{user=u;if(first){first=false;res()}else{(user?loadCloud():Promise.resolve()).then(()=>{if(onSetup)setup()})}})}catch(e){AUTH_ON=false;res()}})}
 async function loadCloud(){if(!db)return;try{const sn=await db.collection('banks').get();cloud=[];sn.forEach(d=>{const v=d.data();cloud.push({id:d.id,n:(v.items||[]).length,at:v.at||0});add(v.items)})}catch(e){note=(note?note+' · ':'')+'โหลดคลังกลางไม่สำเร็จ'}}
@@ -53,7 +53,7 @@ function adminUp(){return `<div style="margin-top:14px;border-top:1px solid var(
 <input type="file" id="af" accept=".json,application/json" multiple style="margin:8px 0"><textarea id="at" placeholder="หรือวาง JSON ตรงนี้" style="width:100%;height:80px;font:inherit;background:var(--bg);color:var(--tx);border:1px solid var(--bd);border-radius:8px"></textarea>
 <div class="row" style="margin-top:6px"><button class="btn" id="au">อัปโหลด</button><span class="mu" id="am"></span></div>
 <div class="mu" style="margin-top:8px">ชุดที่อัปโหลดไว้ ${cloud.length} ชุด (รวม ${cloud.reduce((a,c)=>a+c.n,0)} ข้อ)</div>${cloud.map(c=>`<div class="row mu"><span>${c.n} ข้อ · ${c.at?new Date(c.at).toLocaleString('th-TH'):'-'}</span><button class="chip" data-cd="${c.id}">ลบชุดนี้</button></div>`).join('')}</div>`}
-async function upAdmin(){const m=$('am'),texts=[];for(const f of$('af').files)texts.push(await f.text());if($('at').value.trim())texts.push($('at').value);
+async function upAdmin(){const m=$('am'),texts=[];for(const f of $('af').files)texts.push(await f.text());if($('at').value.trim())texts.push($('at').value);
  let items=[];texts.forEach(t=>{const r=parseBank(t);if(r)items.push(...r)});const seen=new Set();items=items.filter(x=>!seen.has(x.q)&&seen.add(x.q));
  if(!items.length){m.textContent='ไม่พบโจทย์ที่ใช้ได้ (รูปแบบผิด หรือซ้ำกับคลังเดิม)';return}
  m.textContent='กำลังอัปโหลด…';try{for(let i=0;i<items.length;i+=150)await db.collection('banks').add({items:items.slice(i,i+150),at:Date.now()});
@@ -82,7 +82,7 @@ function setup(){clearInterval(timer);norm();onSetup=true;
  app.innerHTML=`<h1>🩺 จำลองข้อสอบ TPAT1</h1><div class="mu">เลือกพาร์ท บท และจำนวนข้อ เวลาคำนวณตามสัดส่วนข้อสอบจริง</div>${hdr()}${note?`<div class="card">${note}</div>`:''}`+
  K.map(k=>{const p=P[k],v=sel[k],all=chs(k),have=BANK.filter(b=>b.k===k).length;if(!have)return `<div class="card" style="opacity:.55"><h2 style="margin:0">${p.e} ${p.n}</h2><div class="mu">ยังไม่มีโจทย์ในคลัง</div></div>`;
  return `<div class="card"><div class="row" style="justify-content:space-between"><label class="row"><input type="checkbox" data-on="${k}" ${v.on?'checked':''}><h2 style="margin:0">${p.e} ${p.n}</h2></label><span class="mu" id="pt-${k}"></span></div>`+
- (v.on?`<div class="row" style="margin:10px 0">${all.map((c,i)=>`<button class="chip ${v.ch.has(c)?'on':''}" data-ch="${k}\vert{}${i}">${esc(c)} (${BANK.filter(b=>b.k===k&&b.ch===c).length})</button>`).join('')}</div>
+ (v.on?`<div class="row" style="margin:10px 0">${all.map((c,i)=>`<button class="chip ${v.ch.has(c)?'on':''}" data-ch="${k}|${i}">${esc(c)} (${BANK.filter(b=>b.k===k&&b.ch===c).length})</button>`).join('')}</div>
  <div class="row mu"><span>จำนวนข้อ</span><input type="number" min="1" max="${cnt(k,v.ch)||1}" value="${v.n}" data-n="${k}"><span>(มี ${cnt(k,v.ch)})</span><span>เวลาเฉลี่ย</span><input type="number" min="20" max="240" value="${v.s}" data-s="${k}"><span>วิ/ข้อ</span></div>`:'')+`</div>`}).join('')+
  `<div class="card"><h2>📘 วิธีทำให้ได้คะแนนและเร็ว</h2>${tipsHTML(K)}</div>
  <div class="mu" style="margin:8px 2px">คลังข้อสอบปัจจุบัน ${BANK.length} ข้อ</div>
@@ -106,25 +106,27 @@ function start(){onSetup=false;qs=[];K.forEach(k=>{if(!sel[k].on||!sel[k].ch.siz
 function exam(){const q=qs[cur],p=P[q.k];
  app.innerHTML=`<div class="bar"><div><span class="tag">${p.e} ${p.n}</span><div class="mu">ข้อ ${cur+1}/${qs.length} · เฉลี่ย ${sel[q.k].s} วิ/ข้อ</div></div><div class="tm ${left<total*.1?'lo':''}" id="tm">${mm(left)}</div></div>
  <div class="card"><div class="mu">${esc(q.ch)}</div><div class="q">${esc(q.q)}</div>
- ${q.c.map((c,i)=>`<button class="opt ${ans[cur]===i?'sel':''}" data-o="${i}"><b>${L[i]}.</b>${esc(c)}</button>`).join('')}
+ ${q.c.map((c,i)=>`<button class="opt ${ans[cur]===i?'sel':''}" data-o="${i}"><b>${L[i]}.</b> ${esc(c)}</button>`).join('')}
  <div class="row" style="margin-top:10px"><button class="btn g" id="pv" ${cur?'':'disabled'}>← ก่อนหน้า</button><button class="btn g" id="fl">${flag.has(cur)?'🚩 ยกเลิกธง':'🏳️ ปักธง'}</button><button class="btn g" id="nx" ${cur<qs.length-1?'':'disabled'}>ถัดไป →</button></div></div>
- <div class="card"><div class="grid">${qs.map((_,i)=>`<button class="gn ${ans[i]>=0?'d':''} ${flag.has(i)?'f':''}${i===cur?'c':''}" data-g="${i}">${i+1}</button>`).join('')}</div>
+ <div class="card"><div class="grid">${qs.map((_,i)=>`<button class="gn ${ans[i]>=0?'d':''} ${flag.has(i)?'f':''} ${i===cur?'c':''}" data-g="${i}">${i+1}</button>`).join('')}</div>
  <div class="mu" style="margin-top:8px">ตอบแล้ว ${ans.filter(a=>a>=0).length}/${qs.length} · ธง ${flag.size}</div></div>
  <div class="foot"><div class="row" style="justify-content:flex-end"><button class="btn" id="sb">${armed?'กดอีกครั้งเพื่อยืนยันส่งข้อสอบ':'ส่งข้อสอบ'}</button></div></div>`;
  app.querySelectorAll('[data-o]').forEach(b=>b.onclick=()=>{ans[cur]=+b.dataset.o;armed=false;exam()});
  app.querySelectorAll('[data-g]').forEach(b=>b.onclick=()=>{cur=+b.dataset.g;exam();scrollTo(0,0)});
  $('pv').onclick=()=>{cur--;exam();scrollTo(0,0)};$('nx').onclick=()=>{cur++;exam();scrollTo(0,0)};
- $('fl').onclick=()=>{flag.has(cur)?flag.delete(cur):flag.add(cur);exam()};$('sb').onclick=()=>{if(!armed){armed=true;exam()}else finish()}}
+ $('fl').onclick=()=>{flag.has(cur)?flag.delete(cur):flag.add(cur);exam()};
+ $('sb').onclick=()=>{if(!armed){armed=true;exam()}else finish()}}
 
 function finish(){clearInterval(timer);const used=total-Math.max(0,left);let ok=0;const by={};
  qs.forEach((q,i)=>{by[q.k]=by[q.k]||{n:0,c:0,u:0};by[q.k].n++;if(ans[i]===q.a){ok++;by[q.k].c++}if(ans[i]<0)by[q.k].u++});
  const pc=Math.round(ok/qs.length*100);
  app.innerHTML=`<h1>ผลสอบ</h1><div class="card"><div class="big">${ok}/${qs.length} <span style="font-size:20px">(${pc}%)</span></div><div class="mu">ใช้เวลา ${mm(used)} จาก ${mm(total)}</div></div>
- <div class="card"><h2>แยกตามพาร์ท</h2>${Object.keys(by).map(k=>`<div class="row" style="justify-content:space-between;margin:6px 0"><span>${P[k].e}${P[k].n}</span><b>${by[k].c}/${by[k].n} <span class="mu">(ไม่ได้ตอบ ${by[k].u})</span></b></div>`).join('')}</div>
+ <div class="card"><h2>แยกตามพาร์ท</h2>${Object.keys(by).map(k=>`<div class="row" style="justify-content:space-between;margin:6px 0"><span>${P[k].e} ${P[k].n}</span><b>${by[k].c}/${by[k].n} <span class="mu">(ไม่ได้ตอบ ${by[k].u})</span></b></div>`).join('')}</div>
  <div class="card"><h2>เทคนิคสำหรับพาร์ทที่สอบ</h2>${tipsHTML(Object.keys(by))}</div>
  <div class="row"><button class="chip on" id="all">ดูทุกข้อ</button><button class="chip" id="wr">เฉพาะข้อที่ผิด/ไม่ได้ตอบ</button></div><div id="rv"></div>
  <div class="foot"><div class="row" style="justify-content:flex-end"><button class="btn" id="re">ทำชุดใหม่</button></div></div>`;
- const show=w=>{$('all').classList.toggle('on',!w);$('wr').classList.toggle('on',w);$('rv').innerHTML=qs.map((q,i)=>({q,i})).filter(x=>!w||ans[x.i]!==x.q.a).map(({q,i})=>`<div class="card"><span class="tag">${P[q.k].e} ${P[q.k].n}</span> <span class="mu">ข้อ ${i+1} · ${esc(q.ch)}</span><div class="q">${esc(q.q)}</div>${q.c.map((c,j)=>`<div class="opt ${j===q.a?'ok':j===ans[i]?'no':''}"><b>${L[j]}.</b> ${esc(c)}${j===ans[i]?' (คำตอบของคุณ)':''}</div>`).join('')}<div class="mu">💡 ${esc(q.e)}</div></div>`).join('')||'<div class="card">ถูกหมดเลย 🎉</div>'};
+ const show=w=>{$('all').classList.toggle('on',!w);$('wr').classList.toggle('on',w);
+  $('rv').innerHTML=qs.map((q,i)=>({q,i})).filter(x=>!w||ans[x.i]!==x.q.a).map(({q,i})=>`<div class="card"><span class="tag">${P[q.k].e} ${P[q.k].n}</span> <span class="mu">ข้อ ${i+1} · ${esc(q.ch)}</span><div class="q">${esc(q.q)}</div>${q.c.map((c,j)=>`<div class="opt ${j===q.a?'ok':j===ans[i]?'no':''}"><b>${L[j]}.</b> ${esc(c)}${j===ans[i]?' (คำตอบของคุณ)':''}</div>`).join('')}<div class="mu">💡 ${esc(q.e)}</div></div>`).join('')||'<div class="card">ถูกหมดเลย 🎉</div>'};
  $('all').onclick=()=>show(false);$('wr').onclick=()=>show(true);$('re').onclick=setup;show(false);scrollTo(0,0)}
 
 (async()=>{try{const r=await fetch('tpat1-bank.json',{cache:'no-store'});if(r.ok){const n=add(await r.json());if(n)note=`โหลดคลังข้อสอบ ${n} ข้อแล้ว`}}catch(e){}
